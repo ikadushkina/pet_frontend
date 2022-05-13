@@ -1,0 +1,20 @@
+.canvas {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 60px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  canvas {
+    background: white;
+
+    &.pencil {
+      cursor: url("../../assets/icons/edit_icon.svg"), auto;
+    }
+
+    &.eraser {
+      cursor: url("../../assets/icons/square-icon.svg"), auto;
+    }
+  }
+}

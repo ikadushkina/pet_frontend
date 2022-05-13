@@ -1,0 +1,19 @@
+.button {
+  border-radius: 5px;
+  border: 2px solid #282c34;
+  background: #282c34;
+  height: 44px;
+  padding: 5px 20px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: azure;
+  transition: 0.25s;
+
+  &:hover {
+    transition: 0.25s;
+    background: azure;
+    color: #282c34;
+  }
+}
