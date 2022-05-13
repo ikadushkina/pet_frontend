@@ -26,6 +26,7 @@
         "react/jsx-indent-props": ["error", 2],
         "react/display-name": "off",
         "accessor-pairs": "off",
-        "space-before-function-paren": 0
+        "space-before-function-paren": 0,
+        "spaced-comment": "off"
     }
 }

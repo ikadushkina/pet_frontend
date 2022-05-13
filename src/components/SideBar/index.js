@@ -3,7 +3,7 @@ import { ButtonIcon } from "../../atoms/ButtonIcon";
 import { Header } from "../Header";
 import { ToolBar } from "../ToolBar";
 
-export const SideBar = ({ children }) => (
+const SideBar = ({ children }) => (
   <div className={styles.layout}>
     <Header />
     <div className={styles.content}>
@@ -17,3 +17,5 @@ export const SideBar = ({ children }) => (
     </div>
   </div>
 );
+
+export default SideBar;

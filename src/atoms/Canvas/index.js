@@ -5,7 +5,7 @@ import canvasState from "../../store/canvasState";
 import toolState from "../../store/toolState";
 import cs from "classnames";
 
-export const Canvas = observer(() => {
+const Canvas = () => {
   const canvasRef = useRef(null);
   const canvasContainer = useRef(null);
   const [width, setWidth] = useState(1000);
@@ -36,4 +36,6 @@ export const Canvas = observer(() => {
             />
     </div>
   );
-});
+};
+
+export default observer(Canvas);
