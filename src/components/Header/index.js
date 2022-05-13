@@ -3,8 +3,9 @@ import styles from "./Header.module.scss";
 import { ReactComponent as MonaLisaSvg } from "../../assets/icons/mona-liza.svg";
 import { ReactComponent as Avatar } from "../../assets/icons/avatar.svg";
 import userState from "../../store/userState";
+import { observer } from "mobx-react-lite";
 
-export const Header = () => {
+export const Header = observer(() => {
   const user = userState.data;
   return (
     <header className={styles.header}>
@@ -15,11 +16,11 @@ export const Header = () => {
         <span>PaintOnline</span>
       </div>
       <div className={styles.userSide}>
-        <span>{user.name}</span>
+        <span>{user?.name || "Unidentified Artist"}</span>
         <div className={styles.avatar}>
           <Avatar />
         </div>
       </div>
     </header>
   );
-};
+});
