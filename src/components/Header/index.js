@@ -1,18 +1,17 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import { ReactComponent as MonaLisaSvg } from "../../assets/icons/mona-liza.svg";
 import { ReactComponent as Avatar } from "../../assets/icons/avatar.svg";
 import userState from "../../store/userState";
 import { observer } from "mobx-react-lite";
+import Logo from "../../atoms/Logo";
 
 export const Header = observer(() => {
   const user = userState.data;
+
   return (
     <header className={styles.header}>
       <div className={styles.naming}>
-        <div className={styles.logo}>
-          <MonaLisaSvg />
-        </div>
+        <Logo />
         <span>PaintOnline</span>
       </div>
       <div className={styles.userSide}>

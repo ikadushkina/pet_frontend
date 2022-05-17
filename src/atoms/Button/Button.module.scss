@@ -1,7 +1,9 @@
+@import "src/assets/scss/constants";
+
 .button {
   border-radius: 5px;
-  border: 2px solid #282c34;
-  background: #282c34;
+  border: 2px solid $blue_dark;
+  background: $blue_dark;
   height: 44px;
   padding: 5px 20px;
   cursor: pointer;
@@ -14,6 +16,13 @@
   &:hover {
     transition: 0.25s;
     background: azure;
-    color: #282c34;
+    color: $blue_dark;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $gray;
+    color: $gray_dark;
+    border-color: $gray_dark;
   }
 }

@@ -1,0 +1,35 @@
+@import "src/assets/scss/constants";
+
+.root {
+  height: 100vh;
+  background: $green_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    padding: 20px;
+    border-radius: 10px;
+    background: $green-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+
+    & > div:first-child {
+      width: 100px;
+      height: 100px;
+    }
+
+    span {
+      font-family: 'Istok Web', serif;
+      text-align: center;
+      margin-bottom: 10px;
+
+      a {
+        color: $red_dark;
+      }
+    }
+  }
+}
