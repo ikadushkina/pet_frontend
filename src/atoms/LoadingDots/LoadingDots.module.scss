@@ -1,0 +1,42 @@
+@import "src/assets/scss/constants";
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: $blue_dark;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: 2s loading infinite;
+
+    &:first-of-type {
+      animation-delay: -1s;
+    }
+
+    &:nth-of-type(2) {
+      animation-delay: -.5s;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 10px;
+    height: 10px;
+  }
+
+  50% {
+    width: 25px;
+    height: 25px;
+  }
+
+  100% {
+    width: 10px;
+    height: 10px;
+  }
+
+}

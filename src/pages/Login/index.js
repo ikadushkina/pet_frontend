@@ -7,8 +7,10 @@ import { NavLink } from "react-router-dom";
 import { observer } from "mobx-react";
 import * as Yup from "yup";
 import AuthLayout from "../../components/AuthLayout";
+import LoadingPage from "../../components/LoadingPage";
 
 export default observer(() => {
+  const loading = userState.loading;
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -49,6 +51,9 @@ export default observer(() => {
         />
       <Button className={styles.button} onClick={onSubmit} disabled={!formik.isValid}>Login</Button>
       <span>Don`t have account yet? <br/> Just <NavLink to="/sign-up">Sign Up!</NavLink></span>
+      {
+        loading && <LoadingPage />
+      }
     </AuthLayout>
   );
 });
