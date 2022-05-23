@@ -1,10 +1,13 @@
+@import "src/assets/scss/constants";
+
 .input {
   position: relative;
   width: 100%;
   margin-bottom: 15px;
 
   span {
-    color: white;
+    font-family: 'Istok Web', serif;
+    color: $green_dark;
     width: 100%;
     font-size: 18px;
     text-align: left;
@@ -12,7 +15,7 @@
 
   input {
     padding: 5px 10px;
-    border: 1px solid #a4f3a4;
+    border: 1px solid $green_dark;
     border-radius: 5px;
     height: 44px;
     outline: none;
@@ -23,6 +26,8 @@
   .error {
     position: absolute;
     bottom: 0;
-    color: #ff8989;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $error;
   }
 }

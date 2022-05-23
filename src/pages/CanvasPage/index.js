@@ -11,7 +11,7 @@ const CanvasPage = () => {
   const user = userState.data;
 
   useEffect(() => {
-    if (!user) navigate("/sign-up", { replace: true });
+    if (!user) navigate("/login", { replace: true });
   }, [user]);
 
   return (
