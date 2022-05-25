@@ -7,7 +7,7 @@ import Logo from "../../atoms/Logo";
 import UserDropdown from "../UserDropdown";
 import { useClickOutside } from "../../helper/useClickOutside";
 
-export const Header = observer(() => {
+export const Header = observer(({ isCanvas, title }) => {
   const user = userState.data;
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -17,19 +17,26 @@ export const Header = observer(() => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.naming}>
-        <Logo />
-        <span>PaintOnline</span>
-      </div>
-      <div className={styles.userSide}>
-        <span>{user?.name || "Unidentified Artist"}</span>
-        <div className={styles.avatar} onClick={() => setIsOpen(!isOpen)} ref={avatarRef}>
-          <Avatar />
-        </div>
-        {
-          isOpen && <UserDropdown ref={dropdownRef} />
-        }
-      </div>
+      {
+        isCanvas ?
+          <>
+            <div className={styles.naming}>
+              <Logo />
+              <span>PaintOnline</span>
+            </div>
+            <div className={styles.userSide}>
+              <span>{user?.first_name || "Unidentified Artist"}</span>
+              <div className={styles.avatar} onClick={() => setIsOpen(!isOpen)} ref={avatarRef}>
+                <Avatar />
+              </div>
+              {
+                isOpen && <UserDropdown ref={dropdownRef} />
+              }
+            </div>
+          </>
+          :
+          <span className={styles.title}>{title || "Test"}</span>
+      }
     </header>
   );
 });

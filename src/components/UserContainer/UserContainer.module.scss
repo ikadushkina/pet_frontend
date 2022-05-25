@@ -1,0 +1,70 @@
+@import "src/assets/scss/constants.scss";
+
+a {
+  text-decoration: none;
+  color: white;
+
+  &.canvasPage {
+    color: black
+  }
+}
+
+.userContainer {
+  padding: 10px 20px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    svg {
+      width: 70%;
+    }
+  }
+
+  .userName {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    .email {
+      font-size: 12px;
+      color: $green_light;
+    }
+  }
+
+  &:hover {
+    background: #3c4352;
+  }
+}
+
+.canvasPage {
+  .userContainer {
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid black;
+
+    .avatar {
+      border: 2px solid $green_dark;
+    }
+
+    .email {
+      color: $gray_dark;
+    }
+
+    &:hover {
+      background: $gray;
+    }
+  }
+}

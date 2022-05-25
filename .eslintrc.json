@@ -27,6 +27,8 @@
         "react/display-name": "off",
         "accessor-pairs": "off",
         "space-before-function-paren": 0,
-        "spaced-comment": "off"
+        "spaced-comment": "off",
+        "camelcase": "off",
+        "operator-linebreak": "off"
     }
 }

@@ -78,11 +78,11 @@ export const ToolBar = () => {
     <div className={styles.tools}>
       <div onClick={onBrushClick} className={cs({ [styles.active]: active === "brush" })}> <Pencil /> </div>
       <div onClick={onEraserClick} className={cs({ [styles.active]: active === "eraser" })}> <Eraser /> </div>
+      <div onClick={onTrashClick}> <TrashIcon /> </div>
       <div onClick={onRectClick} className={cs({ [styles.active]: active === "rectFill" })}> <div className={styles.rect}/> </div>
       <div onClick={onCircleClick} className={cs({ [styles.active]: active === "circleFill" })}> <div className={styles.circle}/> </div>
       <div onClick={onRectFillClick} className={cs({ [styles.active]: active === "rect" })}> <RectIcon /> </div>
       <div onClick={onCircleFillClick} className={cs({ [styles.active]: active === "circle" })}> <CircleIcon /> </div>
-      <div onClick={onTrashClick}> <TrashIcon /> </div>
       <input type="color" onChange={onChangeColor} id={colorPickerId} />
       <label htmlFor={colorPickerId}> <PaletteIcon fill={color} /> </label>
     </div>
