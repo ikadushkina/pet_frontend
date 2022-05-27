@@ -1,7 +1,9 @@
+@import "src/assets/scss/constants";
+
 .header {
   height: 60px;
   width: 100vw;
-  padding: 10px 20px;
+  padding: 10px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,10 +53,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
 
       svg {
-        width: 70%;
+        width: $green_dark;
       }
     }
+  }
+
+  .title {
+    font-size: 24px;
+    color: $green_dark;
   }
 }

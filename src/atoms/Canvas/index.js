@@ -18,8 +18,8 @@ const Canvas = () => {
 
   useEffect(() => {
     if (canvasContainer.current) {
-      setWidth(canvasContainer.current.clientWidth - 100);
-      setHeight(canvasContainer.current.clientHeight - 100);
+      setWidth(canvasContainer.current.clientWidth - 150);
+      setHeight(canvasContainer.current.clientHeight - 150);
     }
   }, [canvasContainer.current]);
 

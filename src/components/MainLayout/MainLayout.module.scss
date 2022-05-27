@@ -1,0 +1,19 @@
+@import "src/assets/scss/constants";
+
+.mainLayout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 260px);
+
+    .content {
+      background: $gray;
+      padding: 25px;
+      height: calc(100vh - 60px);
+    }
+  }
+}

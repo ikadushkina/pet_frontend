@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "dayjs": "^1.11.2",
     "formik": "^2.2.9",
     "mobx": "^6.4.2",
     "mobx-react": "^7.4.0",
