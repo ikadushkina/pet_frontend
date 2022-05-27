@@ -12,11 +12,14 @@ class UserState {
   }
 
   loadData() {
-    const localData = JSON.parse(localStorage.getItem("AUTH_DATA") || "");
-    console.log("localData", localData);
-    runInAction(() => {
-      this.data = localData?.user;
-    });
+    try {
+      const localData = JSON.parse(localStorage.getItem("AUTH_DATA") || "");
+      runInAction(() => {
+        this.data = localData?.user;
+      });
+    } catch (e) {
+      localStorage.clear();
+    }
   };
 
   async me(email) {
