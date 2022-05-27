@@ -18,7 +18,7 @@ class UserState {
         this.data = localData?.user;
       });
     } catch (e) {
-      localStorage.clear();
+      localStorage.removeItem("AUTH_DATA");
     }
   };
 
