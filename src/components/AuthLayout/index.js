@@ -7,10 +7,9 @@ import Logo from "../../atoms/Logo";
 
 const AuthLayout = ({ children }) => {
   const navigate = useNavigate();
-  userState.loadData();
 
   useEffect(() => {
-    if (userState.data) navigate("/canvas");
+    if (userState.data) navigate("/profile");
   }, [userState.data]);
 
   return (

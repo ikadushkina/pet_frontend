@@ -1,0 +1,54 @@
+@import "src/assets/scss/constants";
+
+.profileItem {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+
+  border-radius: 5px;
+  border: 1px solid $blue;
+  color: $blue;
+
+  .value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: $blue_dark;
+    }
+
+    .edit {
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: .25s;
+
+      &:hover {
+        background: $blue;
+        color: white;
+      }
+    }
+  }
+
+  .editContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      height: 33px;
+      border: none;
+      border-bottom: 2px solid $blue_dark;
+      outline: none;
+    }
+
+    button {
+      height: 33px;
+      font-size: 14px;
+      padding: 5px 14px;
+    }
+  }
+}

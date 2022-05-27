@@ -10,6 +10,10 @@
     flex-direction: column;
     width: calc(100vw - 260px);
 
+    header {
+      width: calc(100vw - 260px);
+    }
+
     .content {
       background: $gray;
       padding: 25px;

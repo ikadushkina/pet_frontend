@@ -10,9 +10,8 @@ const MainLayout = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    userState.loadData().then(() => {
-      if (!userState.data && !userState.loading) navigate("/login");
-    });
+    userState.loadData();
+    if (!userState.data && !userState.loading) navigate("/login");
   }, []);
 
   return (
