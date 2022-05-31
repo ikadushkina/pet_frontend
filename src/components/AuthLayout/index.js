@@ -9,6 +9,7 @@ const AuthLayout = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    userState.loadData();
     if (userState.data) navigate("/profile");
   }, [userState.data]);
 

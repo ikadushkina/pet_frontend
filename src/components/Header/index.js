@@ -35,7 +35,7 @@ export const Header = observer(({ isCanvas, title }) => {
             </div>
           </>
           :
-          <span className={styles.title}>{title || "Test"}</span>
+          <span className={styles.title}>{title}</span>
       }
     </header>
   );

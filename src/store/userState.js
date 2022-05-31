@@ -96,6 +96,7 @@ class UserState {
     try {
       this.loading = true;
       await logout();
+      this.data = null;
       localStorage.clear();
       window.location.reload();
       this.loading = false;

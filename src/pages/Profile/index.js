@@ -11,21 +11,17 @@ import utc from "dayjs/plugin/utc";
 import LoadingDots from "../../atoms/LoadingDots";
 import { useEffect, useState } from "react";
 import LoadingPage from "../../components/LoadingPage";
+import UploadImageModal from "../../components/Modals/UploadImageModal";
 dayjs.extend(utc);
 
 const Profile = () => {
-  const user = userState.data;
-  const updating = userState.updating;
+  const { data: user, loading, updating } = userState;
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpenUploading, setIsOpenUploading] = useState(false);
 
   useEffect(() => {
-    userState.loadData();
-    if (user?.email) {
-      userState.me(user.email).then(() => {
-        setIsLoading(false);
-      });
-    }
-  }, []);
+    if (user?.email && !loading) setIsLoading(false);
+  }, [user, loading]);
 
   const showUserTime = () => {
     const mins = dayjs().diff(dayjs(user?.registered_at), "m");
@@ -38,7 +34,7 @@ const Profile = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout title="Profile">
       {
         isLoading ?
           <div className={styles.loading}>
@@ -47,7 +43,7 @@ const Profile = () => {
           :
           <div className={styles.profileContainer}>
             <div className={styles.userContainer}>
-              <div className={styles.frame}>
+              <div className={styles.frame} onClick={() => setIsOpenUploading(true)}>
                 <Avatar />
                 <div>
                   <AddPhoto />
@@ -72,6 +68,7 @@ const Profile = () => {
           </div>
       }
       { updating && <LoadingPage /> }
+      <UploadImageModal open={isOpenUploading} onClose={() => setIsOpenUploading(false)} />
     </MainLayout>
   );
 };
