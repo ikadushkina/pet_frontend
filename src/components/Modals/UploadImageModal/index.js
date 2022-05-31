@@ -4,11 +4,21 @@ import styles from "./UploadImageModal.module.scss";
 import { useState } from "react";
 import { Button } from "../../../atoms/Button";
 import cs from "classnames";
+import userState from "../../../store/userState";
+import { toDataURL } from "../../../helper/utils";
+import LoadingDots from "../../../atoms/LoadingDots";
 
-const UploadImageModalContent = () => {
+const UploadImageModalContent = ({ onClose }) => {
+  const { data: user, updating } = userState;
   const [image, setImage] = useState();
   const onDrop = acceptedFiles => {
     setImage(acceptedFiles[0]);
+  };
+
+  const handleUpload = async () => {
+    const data = await toDataURL(image);
+    await userState.uploadAvatar(user.id, data);
+    onClose();
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
@@ -32,7 +42,7 @@ const UploadImageModalContent = () => {
           </>
         }
       </div>
-      <Button disabled={!image}>Upload</Button>
+      <Button disabled={!image} onClick={handleUpload}>{updating ? <LoadingDots /> : "Upload"}</Button>
     </div>
   );
 };

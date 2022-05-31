@@ -20,12 +20,17 @@ export const logout = async () => {
   return response.data;
 };
 
-export const me = async (email) => {
-  const response = await instance.get(`/user/me?email=${email}`, { withCredentials: true });
+export const me = async () => {
+  const response = await instance.get("/user/me", { withCredentials: true });
   return response.data;
 };
 
 export const updateUser = async (data) => {
   const response = await instance.post("/user/update", data, { withCredentials: true });
+  return response.data;
+};
+
+export const uploadAvatar = async (id, data) => {
+  const response = await instance.post(`user/upload/avatar?user_id=${id}`, { image: data });
   return response.data;
 };
