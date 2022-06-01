@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { login, logout, me, signUp, updateUser } from "../service/userService";
+import { login, logout, me, signUp, updateUser, uploadAvatar } from "../service/userService";
 
 class UserState {
   data = null;
@@ -103,6 +103,25 @@ class UserState {
     } catch (e) {
       this.loading = false;
       this.error = e;
+    }
+  };
+
+  uploadAvatar = async (id, image) => {
+    try {
+      this.updating = true;
+      await uploadAvatar(id, image);
+      const { data } = await me();
+      runInAction(() => {
+        this.data = data;
+      });
+    } catch (e) {
+      runInAction(() => {
+        this.error = e;
+      });
+    } finally {
+      runInAction(() => {
+        this.updating = false;
+      });
     }
   };
 }

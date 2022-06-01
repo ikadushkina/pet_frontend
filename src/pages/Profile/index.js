@@ -1,8 +1,6 @@
 import { observer } from "mobx-react";
 import MainLayout from "../../components/MainLayout";
 import styles from "./Profile.module.scss";
-import { ReactComponent as Avatar } from "../../assets/icons/avatar.svg";
-import { ReactComponent as AddPhoto } from "../../assets/icons/add_photo.svg";
 import userState from "../../store/userState";
 import RatingLabel from "../../atoms/RatingLabel";
 import ProfileItem from "../../components/ProfileItem";
@@ -12,6 +10,7 @@ import LoadingDots from "../../atoms/LoadingDots";
 import { useEffect, useState } from "react";
 import LoadingPage from "../../components/LoadingPage";
 import UploadImageModal from "../../components/Modals/UploadImageModal";
+import Avatar from "../../atoms/Avatar";
 dayjs.extend(utc);
 
 const Profile = () => {
@@ -43,11 +42,8 @@ const Profile = () => {
           :
           <div className={styles.profileContainer}>
             <div className={styles.userContainer}>
-              <div className={styles.frame} onClick={() => setIsOpenUploading(true)}>
-                <Avatar />
-                <div>
-                  <AddPhoto />
-                </div>
+              <div className={styles.avatar} onClick={() => setIsOpenUploading(true)}>
+                <Avatar url={user?.avatar} isProfile />
               </div>
               <div className={styles.nameContainer}>
                 <div>

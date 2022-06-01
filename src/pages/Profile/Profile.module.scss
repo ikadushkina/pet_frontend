@@ -12,58 +12,6 @@
     padding: 20px;
     background: $green_dark;
 
-    .frame {
-      position: relative;
-      width: 125px;
-      height: 125px;
-      flex: 0 0 125px;
-      background: white;
-      border-radius: 50%;
-      border: 3px solid white;
-      margin-right: 30px;
-      cursor: pointer;
-      overflow: hidden;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      svg {
-        width: 50%;
-        height: 50%;
-      }
-
-      div {
-        display: none;
-        border-radius: 50%;
-      }
-
-      &:hover {
-        & > svg {
-          opacity: .7;
-        }
-
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-
-          backdrop-filter: blur(4px);
-
-          svg {
-            width: 35%;
-            height: 35%;
-          }
-        }
-      }
-    }
-
     .nameContainer {
       display: flex;
       align-items: center;
