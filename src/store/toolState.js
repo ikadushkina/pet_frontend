@@ -23,7 +23,6 @@ class ToolState {
 
   setFillColor (color) {
     this.tool.fillColor = color;
-    console.log("this.tool.fillColor", this.tool.fillColor);
   }
 
   clearCanvas () {

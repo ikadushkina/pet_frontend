@@ -1,0 +1,61 @@
+@import "src/assets/scss/constants";
+
+.profileContainer {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  .userContainer {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    background: $green_dark;
+
+    .nameContainer {
+      display: flex;
+      align-items: center;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        .name {
+          display: flex;
+          align-items: center;
+          font-size: 46px;
+          line-height: 46px;
+          color: white;
+          margin-right: 20px;
+
+          & > div {
+            margin-left: 20px;
+          }
+        }
+
+        .registered {
+          font-size: 16px;
+          line-height: 16px;
+          color: $gray_ce;
+        }
+      }
+    }
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+  }
+}
+
+.loading {
+  width: 100%;
+  height: calc(100vh - 60px - 50px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
